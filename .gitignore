@@ -1,0 +1,33 @@
+# Thư mục chứa dependencies
+node_modules/
+
+# Tệp môi trường
+.env
+.env.local
+.env.*.local
+
+# Log và debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log
+
+# File hệ thống
+.DS_Store
+Thumbs.db
+
+# Tạm thời
+*.local
+*.swo
+*.swp
+
+# VSCode hoặc IDE khác
+.vscode/
+.idea/
+*.code-workspace
+
+# Bản build (nếu có)
+dist/
+build/
+coverage/

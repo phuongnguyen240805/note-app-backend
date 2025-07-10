@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "note_app backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect=1111 src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/phuongnguyen240805/note-app-backend.git"
+  },
+  "keywords": [
+    "nodejs",
+    "csr",
+    "backend",
+    "note_app"
+  ],
+  "author": "phuongnguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phuongnguyen240805/note-app-backend/issues"
+  },
+  "homepage": "https://github.com/phuongnguyen240805/note-app-backend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  }
+}
