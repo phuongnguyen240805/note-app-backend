@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/phuongnguyen240805/note-app-backend#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
