@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '.env.local' })
+
 const express = require('express');
 const morgan = require('morgan');
 const db = require('./config/db');
@@ -8,10 +10,12 @@ const cors = require('cors');
 db.connect();
 
 const app = express();
-const port = 3030;
+const port = process.env.PORT;
 
-// ✅ Phải đặt CORS middleware trước
-app.use(cors({ origin: 'http://localhost:2026' }));
+// CORS: cho phép frontend gọi API
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000'
+}));
 
 // widdleware
 app.use(express.json());
@@ -19,6 +23,8 @@ app.use(morgan('dev'));
 
 router(app);
 
+console.log('✅ CLIENT_ORIGIN:', process.env.CLIENT_ORIGIN);
+
 app.listen(port, () => {
-  console.log(`App listening on port http://localhost:${port}/api/notes`)
+  console.log(`App listening on port http://localhost:${port}/api/notes`);
 });

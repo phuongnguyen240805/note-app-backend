@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const noteSchema = new Schema({
     isCompleted: { type: Boolean, default: false },
     text: { type: String, required: true, maxLength: 600 },
+    createdAt: { type: Date, default: Date.now },
 }, {
     timestamps: true,
 });
