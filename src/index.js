@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 
 // CORS: cho phép frontend gọi API
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:2026']
+  origin: ['http://localhost:2026']
 }));
 
 // widdleware
