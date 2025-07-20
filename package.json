@@ -4,7 +4,8 @@
   "description": "note_app backend",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect=1111 src/index.js",
+    "start": "node src/index.js",       
+    "dev": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

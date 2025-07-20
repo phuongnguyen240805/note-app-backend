@@ -10,7 +10,7 @@ const cors = require('cors');
 db.connect();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // CORS: cho phép frontend gọi API
 app.use(cors({
