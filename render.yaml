@@ -10,4 +10,4 @@ services:
         value: production
       - key: PORT
         value: 10000
-    healthCheckPath: /api/note-app
+    healthCheckPath: /api/notes
