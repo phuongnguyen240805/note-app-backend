@@ -1,30 +1,30 @@
-require('dotenv').config({ path: '.env.local' })
-
 const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
 const morgan = require('morgan');
 const db = require('./config/db');
 const router = require('./routes');
-const cors = require('cors');
 
-// Connect DB
+// Load biến môi trường từ file .env
+dotenv.config();
+
+// Kết nối DB
 db.connect();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// CORS: cho phép frontend gọi API
+// CORS: Cho phép các origin gọi API
+const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [];
+
 app.use(cors({
-  origin: ['http://localhost:2026']
+  origin: allowedOrigins,
 }));
 
-// widdleware
 app.use(express.json());
 app.use(morgan('dev'));
-
 router(app);
 
-console.log('✅ CLIENT_ORIGIN:', process.env.CLIENT_ORIGIN);
-
 app.listen(port, () => {
-  console.log(`App listening on port http://localhost:${port}/api/notes`);
+  console.log(`🚀 Server running at http://localhost:${port}`);
 });

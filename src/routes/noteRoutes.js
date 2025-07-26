@@ -17,7 +17,7 @@ router.put('/:id', noteController.updateNote);
 
 // Đánh dấu ghi chú theo ID
 router.patch('/:id', noteController.completedNote);
-
+    
 // Xoá ghi chú theo ID
 router.delete('/:id', noteController.deleteNote);    
 
